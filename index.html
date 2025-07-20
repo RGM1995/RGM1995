@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Adyen Payment Example</title>
+  <script src="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/5.47.0/adyen.js"></script>
+  <link rel="stylesheet" href="https://checkoutshopper-live.adyen.com/checkoutshopper/sdk/5.47.0/adyen.css" />
+</head>
+<body>
+  <div id="dropin-container"></div>
+  <script>
+    async function initAdyen() {
+      const configuration = {
+        clientKey: 'YOUR_ADYEN_CLIENT_KEY',
+        environment: 'test',
+        paymentMethodsResponse: await fetch('/api/paymentMethods').then(res => res.json()),
+        onSubmit: async (state, dropin) => {
+          const res = await fetch('/api/makePayment', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(state.data)
+          }).then(r => r.json());
+          if (res.action) {
+            dropin.handleAction(res.action);
+          } else if (res.resultCode) {
+            alert('Result: ' + res.resultCode);
+          }
+        }
+      };
+      const checkout = await AdyenCheckout(configuration);
+      checkout.create('dropin').mount('#dropin-container');
+    }
+    initAdyen();
+  </script>
+</body>
+</html>
