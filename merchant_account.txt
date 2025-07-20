@@ -1,0 +1,67 @@
+Payment details
+PSP reference: RANDOM123456789
+Date: Aug 15, 2025, 10:00:00 GMT+2
+Payment method: Visa
+Cardholder name: Example Holder
+Card number: 411111****1111
+Expiry date: 12/2030
+Issuer country/region: Netherlands
+Shopper interaction: Point of Sale
+
+Merchant details
+Merchant reference: 2025-08-15 10:00:00
+Merchant account: TEBI_NEW
+
+Acquirer response
+Status: Refused
+Response code: 905_1 Could not find an acquirer account for the provided txvariant (visa), currency (EUR), and action (AUTH).
+
+Payment history
+Refused
+Aug 15, 2025, 10:00:00 GMT+2
+
+Payment events
+Payment
+Aug 15, 2025, 10:00:00 GMT+2
+Status: Refused
+Amount: EUR 2.00
+
+Receipts
+Shopper receipt
+KOPIE KAARTHOUDER
+Datum: 15/08/2025
+Tijd: 10:00:00
+Kaart: ****1111
+PAN seq.: 01
+Gewenste naam: Visa
+Kaarttype: Visa Debit
+Betalingsmethode: visa
+Invoermodus: Contactloze chip
+AID: A0000000031010
+TID: AMS1-000168243337981
+PTID: 43337981
+Tender: ztpV001752985631000
+Referentie: 2025-08-15 10:00:00
+Type: GOEDEREN_SERVICES
+Totaal: € 2,00
+!!! AFGEWEZEN !!!
+Bewaar uw bon
+
+Merchant receipt
+KOPIE WINKELIER
+Datum: 15/08/2025
+Tijd: 10:00:00
+Kaart: ****1111
+PAN seq.: 01
+Gewenste naam: Visa
+Kaarttype: Visa Debit
+Betalingsmethode: visa
+Invoermodus: Contactloze chip
+AID: A0000000031010
+TID: AMS1-000168243337981
+PTID: 43337981
+Tender: ztpV001752985631000
+Referentie: 2025-08-15 10:00:00
+Type: GOEDEREN_SERVICES
+Totaal: € 2,00
+!!! AFGEWEZEN !!!
